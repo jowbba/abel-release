@@ -2,7 +2,7 @@ const path = require('path')
 const Init = require('./lib/initState')
 const AWS = require('aws-sdk')
 
-const ssm = new AWS.SSM({region: 'cn-north-1'})
+global.ssm = new AWS.SSM({region: 'cn-north-1'})
 
 ssm.getParameters({ Names: ['rds', 'rds-test'] }, (err, data) => {
   // console.log(err, data)
